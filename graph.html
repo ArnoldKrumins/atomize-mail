@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atomize Graph Example</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
+
+   <style type="text/css">
+
+       #container {
+           min-width: 310px;
+           max-width: 800px;
+           height: 400px;
+           margin: 0 auto
+       }
+
+   </style>
+
+
+</head>
+<body>
+
+<div id="container"></div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    Highcharts.chart('container', {
+
+        title: {
+            text: 'Solar Employment Growth by Sector, 2010-2016'
+        },
+
+        subtitle: {
+            text: 'Source: thesolarfoundation.com'
+        },
+
+        yAxis: {
+            title: {
+                text: 'Number of Employees'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2010
+            }
+        },
+
+        annotations: [{
+            labelOptions: {
+                backgroundColor: 'rgba(255,255,255,0.5)',
+                verticalAlign: 'top',
+                y: 0
+            },
+            labels: [{
+                point: {
+                    xAxis: 0,
+                    yAxis: 0,
+                    x: 0,
+                    y: 0
+                },
+                text: 'Arbois'
+            }],
+
+        }],
+
+
+
+        series: [{
+            name: 'Installation',
+            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        }, {
+            name: 'Manufacturing',
+            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+
+
+</script>

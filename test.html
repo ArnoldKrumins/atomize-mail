@@ -154,6 +154,12 @@
         /* Rules prefixed with 'hh-' (for 'handheld') repeat much of what's above, but these don't trigger until the smaller screen width. */
         @media screen and (max-device-width: 425px), screen and (max-width: 425px) {
             /* Helper only visible on handhelds. All styles are inline along with a `display:none`, which this class overrides */
+
+            table[class="email-container"] {
+                width: 100% !important;
+                border-radius: 0 !important;
+            }
+
             div[class="hh-visible"] {
                 display: block !important;
             }

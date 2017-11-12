@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
+
+    <style type="text/css">
+
+        #container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="container" style="height: 400px"></div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    Highcharts.chart('container', {
+        title: {
+            text: 'Chart without categories, falls back to numbers'
+        },
+        xAxis: {
+            gridLineWidth: 0,
+            categories: ['10','', '50', '100'],
+
+
+        },
+        yAxis:[
+            {
+            gridLineWidth: 0,
+            },
+            {
+                gridLineWidth: 0,
+                opposite: true
+            }
+        ],
+        series: [
+            {
+                name: 'Price',
+                type: 'spline',
+                //yAxis: 1,
+                data: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445,1545,1645]
+            },
+            {
+                name: 'Revenue',
+                type: 'spline',
+                data: [-31, 65, 90, 155, 196, 152, 128, 147, -55, -165, -445, -886,-1237,-1607]
+            },
+            {
+                name: 'Occupancy',
+                type: 'spline',
+                yAxis: 1,
+                data: [48, 48, 48, 48, 48, 45, 45, 45, 45, 42, 42, 42,42,39]
+            }
+        ]
+    }
+    );
+
+</script>
+
+

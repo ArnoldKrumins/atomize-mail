@@ -41,11 +41,38 @@
             text: 'Source: thesolarfoundation.com'
         },
 
-        yAxis: {
+        xAxis: {
+            //tickInterval: 7 * 24 * 3600 * 1000, // one week
+            tickWidth: 0,
+            gridLineWidth: 0,
+            labels: {
+                align: 'left',
+                x: 3,
+                y: -3
+            }
+        },
+        yAxis: [{
+            gridLineWidth: 0,
             title: {
                 text: 'Number of Employees'
             }
         },
+            {
+                linkedTo: null,
+                gridLineWidth: 0,
+                opposite: true,
+                title: {
+                    text: null
+                },
+                labels: {
+                    align: 'right',
+                    x: -3,
+                    y: 16,
+                    format: '{value:.,0f}'
+                },
+                showFirstLabel: false
+            }
+        ],
         legend: {
             layout: 'vertical',
             align: 'right',

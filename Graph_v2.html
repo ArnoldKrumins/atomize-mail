@@ -33,29 +33,68 @@
 
     Highcharts.chart('container', {
         title: {
-            text: 'Chart without categories, falls back to numbers'
+            text: ''
         },
+            subtitle: {
+                text: 'Room price vs. occupancy & change in revenue'
+            },
         xAxis: {
             gridLineWidth: 0,
             categories: ['10','', '50', '100'],
 
+            title: {
+                text: null
+            },
 
         },
-        yAxis:[
-            {
+
+
+
+            yAxis:[{
             gridLineWidth: 0,
+            title: {
+                text: null
+            },
             },
             {
                 gridLineWidth: 0,
+                title: {
+                    text: null
+                },
                 opposite: true
             }
         ],
-        series: [
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+
+            legend: {
+                enabled: false
+            },
+
+            annotations: [{
+                labels: [{
+                    point: 'max',
+                    text: 'Max'
+                }, {
+                    point: 'min',
+                    text: 'Min',
+                    backgroundColor: 'black'
+                }]
+            }],
+
+
+            series: [
             {
                 name: 'Price',
                 type: 'spline',
                 //yAxis: 1,
                 data: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445,1545,1645]
+                //data: [[595,10], [645,20], [695], [745], [795], [845], [945], [1045], [1145], [1245], [1345], [1445],[1545],[1645]]
             },
             {
                 name: 'Revenue',

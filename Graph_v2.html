@@ -5,9 +5,9 @@
     <title>Title</title>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/annotations.js"></script>
 
     <style type="text/css">
 
@@ -32,42 +32,76 @@
 <script type="text/javascript">
 
     Highcharts.chart('container', {
-        title: {
-            text: ''
-        },
+            title: {
+                text: ''
+            },
             subtitle: {
                 text: 'Room price vs. occupancy & change in revenue'
             },
-        xAxis: {
-            gridLineWidth: 0,
-            categories: ['10','', '50', '100'],
-
-            title: {
-                text: null
-            },
-
-        },
-
-
-
-            yAxis:[{
-            gridLineWidth: 0,
-            title: {
-                text: null
-            },
-            },
-            {
+            xAxis: {
                 gridLineWidth: 0,
+                lineWidth: 2,
+                offset: 20,
+                tickWidth: 2,
+                //categories: ['10','', '50', '100'],
+
                 title: {
                     text: null
                 },
-                opposite: true
-            }
-        ],
+
+            },
+
+
+            yAxis: [
+                {
+                    gridLineWidth: 0,
+                    max: 200,
+                    min: -1607,
+                    lineColor: '#3C3C3C',
+                    tickColor: '#3C3C3C',
+                    lineWidth: 2,
+
+                    offset: 20,
+                    tickWidth: 2,
+
+                    title: {
+                        text: 'Revenue'
+
+                    },
+                    labels: {
+                        format: '{value:,.0f} Kr'
+                    }
+
+
+                },
+                {
+                    gridLineWidth: 0,
+                    max: 60,
+                    min: 20,
+                    lineWidth: 2,
+                    offset: 20,
+                    tickWidth: 2,
+                    lineColor: '#A2A2A2',
+                    tickColor: '#A2A2A2',
+                    title: {
+                        text: 'Occupancy'
+                    },
+
+                    opposite: true
+                }
+            ],
             plotOptions: {
                 spline: {
                     marker: {
                         enabled: false
+                    }
+                },
+                dataLabels: {
+                    shape: 'callout',
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    style: {
+                        color: '#FFFFFF',
+                        textOutline: 'none'
                     }
                 }
             },
@@ -76,39 +110,43 @@
                 enabled: false
             },
 
-            annotations: [{
-                labels: [{
-                    point: 'max',
-                    text: 'Max'
-                }, {
-                    point: 'min',
-                    text: 'Min',
-                    backgroundColor: 'black'
-                }]
-            }],
-
 
             series: [
-            {
-                name: 'Price',
-                type: 'spline',
-                //yAxis: 1,
-                data: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445,1545,1645]
-                //data: [[595,10], [645,20], [695], [745], [795], [845], [945], [1045], [1145], [1245], [1345], [1445],[1545],[1645]]
-            },
-            {
-                name: 'Revenue',
-                type: 'spline',
-                data: [-31, 65, 90, 155, 196, 152, 128, 147, -55, -165, -445, -886,-1237,-1607]
-            },
-            {
-                name: 'Occupancy',
-                type: 'spline',
-                yAxis: 1,
-                data: [48, 48, 48, 48, 48, 45, 45, 45, 45, 42, 42, 42,42,39]
-            }
-        ]
-    }
+//            {
+//                name: 'Price',
+//                type: 'spline',
+//                xAxis: 0,
+//                data: [
+//                    {
+//                        y: 100,
+//                        dataLabels: {
+//                            enabled: true,
+//                            format: '<span style="font-size: 1.3em">Annotation</span>',
+//                            verticalAlign: 'bottom',
+//                            y: 100
+//                        }
+//                    },
+//                    595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445,1545,1645]
+//                //data: [[595,10], [645,20], [695], [745], [795], [845], [945], [1045], [1145], [1245], [1345], [1445],[1545],[1645]]
+//            },
+                {
+                    name: 'Revenue',
+                    yAxis: 0,
+                    type: 'spline',
+                    color: '#3C3C3C',
+                    data: [-31, 65, 90, 155, 196, 152, 128, 147, -55, -165, -445, -886, -1237, -1607]
+                },
+                {
+                    name: 'Occupancy',
+                    type: 'spline',
+                    yAxis: 1,
+                    color: '#A2A2A2',
+                    data: [48, 48, 48, 48, 48, 45, 45, 45, 45, 42, 42, 42, 42, 39]
+                }
+            ],
+
+
+        }
     );
 
 </script>

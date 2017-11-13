@@ -85,8 +85,14 @@
                 tickAmount: 3,
                 categories: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445, 1545,1645],
 
+
                 labels: {
-                    format: '{value:,.0f} Kr'
+                    format: '{value:,.0f} Kr',
+
+                    style:{
+
+                        fontSize: '8px'
+                    }
                 },
 
                 title: {
@@ -114,7 +120,11 @@
 
                     },
                     labels: {
-                        format: '{value:,.0f} Kr'
+                        format: '{value:,.0f} Kr',
+                        style:{
+
+                            fontSize: '8px'
+                        }
                     }
 
 
@@ -133,7 +143,11 @@
                         text: null
                     },
                     labels: {
-                        format: '{value:,.0f} %'
+                        format: '{value:,.0f} %',
+                        style:{
+
+                            fontSize: '8px'
+                        }
                     },
                     opposite: true
                 }
@@ -153,7 +167,8 @@
                     backgroundColor: 'rgba(0, 0, 0, 0.75)',
                     style: {
                         color: '#FFFFFF',
-                        textOutline: 'none'
+                        textOutline: 'none',
+                        fontSize: '8px'
                     }
                 }
             },
@@ -188,12 +203,12 @@
                             y: -15,
                             style:{
                                 color:'#fffff',
-                                fontSize:'10px'
+                                fontSize:'8px'
                             },
 
                         },
                         marker: { enabled:true, fillColor: '#25CC70', lineColor:'#3C3C3C',lineWidth:1, radius: 5 }
-                    }, -55, -165, -445, -886, -1237, -1607]
+                    }, -55, -165, -445, -886, { y:-1237, marker: { enabled:true, fillColor: '#FFFFFF', lineColor:'#3C3C3C',lineWidth:1, radius: 4 }}, -1607]
 
                 },
                 {

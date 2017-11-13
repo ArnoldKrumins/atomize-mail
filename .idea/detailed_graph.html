@@ -83,7 +83,6 @@
                 offset: 20,
                 tickWidth: 2,
                 tickAmount: 3,
-                //categories: ['10','', '50', '100'],
                 categories: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445, 1545,1645],
 
                 labels: {
@@ -104,10 +103,10 @@
                     min: -1607,
                     lineColor: '#3C3C3C',
                     tickColor: '#3C3C3C',
-                    lineWidth: 3,
+                    lineWidth: 2,
 
                     offset: 20,
-                    tickWidth: 3,
+                    tickWidth: 2,
                     tickAmount: 2,
 
                     title: {
@@ -124,9 +123,9 @@
                     gridLineWidth: 0,
                     max: 60,
                     min: 20,
-                    lineWidth: 3,
+                    lineWidth: 2,
                     offset: 20,
-                    tickWidth: 3,
+                    tickWidth: 2,
                     tickAmount: 2,
                     lineColor: '#A2A2A2',
                     tickColor: '#A2A2A2',
@@ -140,7 +139,11 @@
                 }
             ],
             plotOptions: {
+
                 spline: {
+
+                    enableMouseTracking: false,
+
                     marker: {
                         enabled: false
                     }
@@ -161,29 +164,14 @@
 
 
             series: [
-//            {
-//                name: 'Price',
-//                type: 'spline',
-//                xAxis: 0,
-//                data: [
-//                    {
-//                        y: 100,
-//                        dataLabels: {
-//                            enabled: true,
-//                            format: '<span style="font-size: 1.3em">Annotation</span>',
-//                            verticalAlign: 'bottom',
-//                            y: 100
-//                        }
-//                    },
-//                    595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445,1545,1645]
-//                //data: [[595,10], [645,20], [695], [745], [795], [845], [945], [1045], [1145], [1245], [1345], [1445],[1545],[1645]]
-//            },
                 {
                     name: '',
                     yAxis: 0,
                     type: 'spline',
                     color: '#3C3C3C',
-                    lineWidth:3,
+                    lineWidth:2,
+                    label:false,
+                    showInLegend: false,
                     //data: [-31, 65, 90, 155, 196, 152, 128, 147, -55, -165, -445, -886, -1237, -1607]
 
                     data: [-31, 65, 90, 155, 196, 152, 128,{
@@ -213,7 +201,9 @@
                     type: 'spline',
                     yAxis: 1,
                     color: '#A2A2A2',
-                    lineWidth:3,
+                    lineWidth:2,
+                    label:false,
+                    showInLegend: false,
                     data: [48, 48, 48, 48, 48, 45, 45, 45, 45, 42, 42, 42, 42, 39]
                 }
             ],

@@ -1,137 +1,226 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Atomize Graph Example</title>
+    <title>Title</title>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/annotations.js"></script>
 
-   <style type="text/css">
+    <!--<link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">-->
 
-       #container {
-           min-width: 310px;
-           max-width: 800px;
-           height: 400px;
-           margin: 0 auto
-       }
+    <style type="text/css">
 
-   </style>
 
+        /*@import 'https://code.highcharts.com/css/highcharts.css';*/
+
+        #container {
+            height: 400px;
+            min-width: 300px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .highcharts-data-label-box {
+            fill: #a4edba;
+            stroke: gray;
+            stroke-width: 1px;
+        }
+        .highcharts-data-label {
+            font-weight: normal;
+        }
+        .highlight .highcharts-data-label-box {
+            fill: red;
+            stroke-width: 2px;
+            stroke: black;
+        }
+        .highlight.highcharts-data-label text {
+            font-weight: bold;
+            fill: white;
+        }
+
+
+        /*@import 'https://code.highcharts.com/css/highcharts.css';*/
+
+        #container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 200px;
+            margin: 0 auto
+        }
+
+    </style>
 
 </head>
 <body>
 
-<div id="container"></div>
+<div id="container" style="height: 400px"></div>
 
 </body>
 </html>
 
+
 <script type="text/javascript">
 
     Highcharts.chart('container', {
-
-        title: {
-            text: 'Solar Employment Growth by Sector, 2010-2016'
-        },
-
-        subtitle: {
-            text: 'Source: thesolarfoundation.com'
-        },
-
-        xAxis: {
-            //tickInterval: 7 * 24 * 3600 * 1000, // one week
-            tickWidth: 0,
-            gridLineWidth: 0,
-            labels: {
-                align: 'left',
-                x: 3,
-                y: -3
-            }
-        },
-        yAxis: [{
-            gridLineWidth: 0,
             title: {
-                text: 'Number of Employees'
-            }
-        },
-            {
-                linkedTo: null,
+                text: null
+            },
+
+            chart: {
+                width: 600,
+                height: 300
+            },
+
+            subtitle: {
+                text: 'Room price vs. occupancy & change in revenue'
+            },
+
+            xAxis: {
                 gridLineWidth: 0,
-                opposite: true,
+                lineWidth: 2,
+                offset: 20,
+                tickWidth: 2,
+                tickAmount: 3,
+                categories: [595, 645, 695, 745, 795, 845, 945, 1045, 1145, 1245, 1345, 1445, 1545,1645],
+
+                labels: {
+                    format: '{value:,.0f} Kr'
+                },
+
                 title: {
                     text: null
                 },
-                labels: {
-                    align: 'right',
-                    x: -3,
-                    y: 16,
-                    format: '{value:.,0f}'
-                },
-                showFirstLabel: false
-            }
-        ],
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
 
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 2010
-            }
-        },
-
-        annotations: [{
-            labelOptions: {
-                backgroundColor: 'rgba(255,255,255,0.5)',
-                verticalAlign: 'top',
-                y: 0
             },
-            labels: [{
-                point: {
-                    xAxis: 0,
-                    yAxis: 0,
-                    x: 0,
-                    y: 0
+
+
+            yAxis: [
+                {
+                    gridLineWidth: 0,
+                    max: 200,
+                    min: -1607,
+                    lineColor: '#3C3C3C',
+                    tickColor: '#3C3C3C',
+                    lineWidth: 2,
+
+                    offset: 20,
+                    tickWidth: 2,
+                    tickAmount: 2,
+
+                    title: {
+                        text: null
+
+                    },
+                    labels: {
+                        format: '{value:,.0f} Kr'
+                    }
+
+
                 },
-                text: 'Arbois'
-            }],
+                {
+                    gridLineWidth: 0,
+                    max: 60,
+                    min: 20,
+                    lineWidth: 2,
+                    offset: 20,
+                    tickWidth: 2,
+                    tickAmount: 2,
+                    lineColor: '#A2A2A2',
+                    tickColor: '#A2A2A2',
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        format: '{value:,.0f} %'
+                    },
+                    opposite: true
+                }
+            ],
+            plotOptions: {
 
-        }],
+                spline: {
 
+                    enableMouseTracking: false,
 
-
-        series: [{
-            name: 'Installation',
-            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-        }, {
-            name: 'Manufacturing',
-            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-        }],
-
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
+                    marker: {
+                        enabled: false
+                    }
                 },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
+                dataLabels: {
+                    shape: 'callout',
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    style: {
+                        color: '#FFFFFF',
+                        textOutline: 'none'
                     }
                 }
-            }]
+            },
+
+            legend: {
+                enabled: false
+            },
+
+
+            series: [
+                {
+                    name: '',
+                    yAxis: 0,
+                    type: 'spline',
+                    color: '#3C3C3C',
+                    lineWidth:2,
+                    label:false,
+                    showInLegend: false,
+                    //data: [-31, 65, 90, 155, 196, 152, 128, 147, -55, -165, -445, -886, -1237, -1607]
+
+                    data: [-31, 65, 90, 155, 196, 152, 128,{
+                        y: 147,
+
+                        dataLabels: {
+                            shape: 'callout',
+                            enabled: true,
+                            format: 'max revenue increase<br><span>+{y}</span> at {x:,.0f} Kr',
+                            borderRadius: 5,
+                            backgroundColor: 'rgba(252, 255, 197, 0.7)',
+                            borderWidth: 0,
+                            borderColor: 'rgba(252, 255, 197, 0.7',
+                            y: -15,
+                            style:{
+                                color:'#fffff',
+                                fontSize:'10px'
+                            },
+
+                        },
+                        marker: { enabled:true, fillColor: '#25CC70', lineColor:'#3C3C3C',lineWidth:1, radius: 5 }
+                    }, -55, -165, -445, -886, { y:-1237, marker: { enabled:true, fillColor: '#FFFFFF', lineColor:'#3C3C3C',lineWidth:1, radius: 4 }}, -1607]
+
+                },
+                {
+                    name: '',
+                    type: 'spline',
+                    yAxis: 1,
+                    color: '#A2A2A2',
+                    lineWidth:2,
+                    label:false,
+                    showInLegend: false,
+                    data: [48, 48, 48, 48, 48, 45, 45, 45, 45, 42, 42, 42, 42, 39]
+                }
+            ],
+
+
+            exporting: {
+                sourceWidth: 400,
+                sourceHeight: 200,
+                // scale: 2 (default)
+                chartOptions: {
+                    subtitle: null
+                }
+            }
+
+
         }
-
-    });
-
+    );
 
 </script>

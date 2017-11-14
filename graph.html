@@ -200,14 +200,17 @@
                             shape: 'callout',
                             enabled: true,
                             format: 'max revenue increase<br><span>+{y}</span> at {x:,.0f} Kr',
-                            borderRadius: 5,
+                            borderRadius: 0,
                             backgroundColor: '#25CC70',// 'rgba(252, 255, 197, 0.7)',
                             borderWidth: 0,
-                            borderColor: '#FFFFFF', //'rgba(252, 255, 197, 0.7',
+                            borderColor: '#25CC70', //'rgba(252, 255, 197, 0.7',
+                            shadow: true,
                             y: -15,
                             style:{
                                 color:'#FFFFFF',
-                                fontSize:'12px'
+                                fontSize:'12px',
+                                fontWeight: 'normal',
+                                textOutline:null
 
                             },
 
@@ -231,7 +234,7 @@
 
             exporting: {
                 sourceWidth: 400,
-                sourceHeight: 300,
+                sourceHeight: 250,
                 // scale: 2 (default)
                 chartOptions: {
                     subtitle: null

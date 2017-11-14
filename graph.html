@@ -197,15 +197,16 @@
                         y: 147,
 
                         dataLabels: {
+                            useHTML:true,
                             shape: 'callout',
                             enabled: true,
-                            format: 'max revenue increase<br><span>+{y}</span> at {x:,.0f} Kr',
+                            format: '<span style="text-align: center;">max revenue increase</span><br><span style="text-align: center;"><strong>+{y}</strong> at <strong>{x:,.0f} Kr</strong></span>',
                             borderRadius: 0,
                             backgroundColor: '#25CC70',// 'rgba(252, 255, 197, 0.7)',
                             borderWidth: 0,
                             borderColor: '#25CC70', //'rgba(252, 255, 197, 0.7',
                             shadow: true,
-                            y: -15,
+                            y: -30,
                             style:{
                                 color:'#FFFFFF',
                                 fontSize:'12px',

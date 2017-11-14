@@ -68,6 +68,10 @@
                 text: null
             },
 
+        credits: {
+            enabled: false
+        },
+
             chart: {
                 width: 600,
                 height: 300
@@ -91,7 +95,7 @@
 
                     style:{
 
-                        fontSize: '8px'
+                        fontSize: '12px'
                     }
                 },
 
@@ -123,7 +127,7 @@
                         format: '{value:,.0f} Kr',
                         style:{
 
-                            fontSize: '8px'
+                            fontSize: '12px'
                         }
                     }
 
@@ -146,7 +150,7 @@
                         format: '{value:,.0f} %',
                         style:{
 
-                            fontSize: '8px'
+                            fontSize: '12px'
                         }
                     },
                     opposite: true
@@ -163,12 +167,12 @@
                     }
                 },
                 dataLabels: {
-                    shape: 'callout',
-                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    //shape: 'callout',
+                    backgroundColor: '#25CC70', //'rgba(0, 0, 0, 0.75)',
                     style: {
                         color: '#FFFFFF',
                         textOutline: 'none',
-                        fontSize: '8px'
+                        fontSize: '12px'
                     }
                 }
             },
@@ -197,13 +201,14 @@
                             enabled: true,
                             format: 'max revenue increase<br><span>+{y}</span> at {x:,.0f} Kr',
                             borderRadius: 5,
-                            backgroundColor: 'rgba(252, 255, 197, 0.7)',
+                            backgroundColor: '#25CC70',// 'rgba(252, 255, 197, 0.7)',
                             borderWidth: 0,
-                            borderColor: 'rgba(252, 255, 197, 0.7',
+                            borderColor: '#FFFFFF', //'rgba(252, 255, 197, 0.7',
                             y: -15,
                             style:{
-                                color:'#fffff',
-                                fontSize:'8px'
+                                color:'#FFFFFF',
+                                fontSize:'12px'
+
                             },
 
                         },
@@ -226,7 +231,7 @@
 
             exporting: {
                 sourceWidth: 400,
-                sourceHeight: 200,
+                sourceHeight: 300,
                 // scale: 2 (default)
                 chartOptions: {
                     subtitle: null
